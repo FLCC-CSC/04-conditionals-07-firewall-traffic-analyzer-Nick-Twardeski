@@ -1,8 +1,8 @@
 # FILE NAME - firewall_traffic_analyzer.py
 
-# NAME: 
-# DATE: 
-# BRIEF DESCRIPTION:  
+# NAME: Nick Twardeski
+# DATE: 3/14/26
+# BRIEF DESCRIPTION:  Firewall Traffic Lab
 
 
 
@@ -16,7 +16,37 @@
 ########## ENTER YER CODE BELOW THIS LINE ##########
 
 
+def main():
+    analyzer()
+      
 
+def analyzer():
+
+    print('=== Network Traffic Security Analyzer ===')
+
+    port = int(input('Enter the port number (e.g., 80, 22, 443, 3389):'))
+    data = int(input('Enter the data transfer size in megabytes (MB):'))
+   
+    print('FIREWALL LOG:')
+    print(f'Port: {port}, Transfer Size: {data} MB')
+
+    if (port == 22 or port == 3389) and data >= 100:
+        print('Risk Assessment: HIGH RISK: Potential unauthorized remote access detected!')
+
+    elif port == 80 and data > 100:
+        print('Risk Assessment: MEDIUM RISK: Large unencrypted data transfer detected.')
+
+    elif port == 443:
+        print('Risk Assessment: LOW RISK: Secure encrypted transfer detected.')
+
+    else:
+        print('Risk Assessment: UNKNOWN: Unrecognized traffic pattern.')
+
+    print('------------------------')
+
+
+
+main()
 
 
 
@@ -50,10 +80,10 @@ Risk Assessment: MEDIUM RISK: Large unencrypted data transfer detected.
 === Network Traffic Security Analyzer ===
 
 Enter the port number (e.g., 80, 22, 443, 3389): 22
-Enter the data transfer size in megabytes (MB): 12
+Enter the data transfer size in megabytes (MB): 1200
 
 FIREWALL LOG:
-Port: 22, Transfer Size: 12 MB
+Port: 22, Transfer Size: 1200 MB
 Risk Assessment: HIGH RISK: Potential unauthorized remote access detected!
 ------------------------
 '''
@@ -91,7 +121,7 @@ Risk Assessment: UNKNOWN: Unrecognized traffic pattern.
 1. Did you get tripped up using the `or` or `and` operators? If so, how?
 
 
-
+I did not get tripped up with that
 
 
 
